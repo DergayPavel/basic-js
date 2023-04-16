@@ -14,7 +14,7 @@ const { NotImplementedError } = require('../extensions/index.js');
 function getSeason(date) {
   let month = date.getMonth()
   if (typeof (month)!=='number'){
-    return 'Invalid date!'
+    throw new Error('Invalid date!');
   }
   if(month<2 || month === 11){
     return 'winter'
