@@ -4,7 +4,7 @@ const { getSeason } = require('../src/what-season.js');
 
 const { CORRECT_RESULT_MSG, INCORRECT_RESULT_MSG } = CONSTANTS;
 
-it.optional = testOptional;
+it.optional = testOptional; 
 
 Object.freeze(expect);
 Object.freeze(assert);
