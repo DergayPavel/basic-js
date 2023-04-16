@@ -15,14 +15,17 @@ const HALF_LIFE_PERIOD = 5730;
  * 
  * dateSample('1') => 22387
  * dateSample('WOOT!') => false
- *
  */
+
 function dateSample(sampleActivity) {
-  if(!Number(sampleActivity)){
+  if(!Number(sampleActivity) || typeof(sampleActivity)!=='string' || Number(sampleActivity)<0){
     return false
   }
-  let k = 0.693/HALF_LIFE_PERIOD;
-  let year = Math.log(MODERN_ACTIVITY/sampleActivity)/k
+  let k = 0.693/5730;
+  let year = Math.ceil(Math.log(15/sampleActivity)/k)
+  if(year<0){
+    return false
+  } 
   return year
 }
 
